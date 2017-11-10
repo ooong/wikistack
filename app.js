@@ -6,6 +6,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var env = nunjucks.configure('views', {noCache: true});
+var models = require('./models/index.js')               //connects to models-index.js
 
 
 
