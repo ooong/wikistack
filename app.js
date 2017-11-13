@@ -18,10 +18,14 @@ app.engine('html', nunjucks.render);
 
 app.use(express.static(__dirname + '/public'))
 
-// app.get('/', function (req, res, next) {
-// 	res.
-// })
 
+// models.db.sync({})
+// .then(function () {
+// 	app.listen(3000, function() {
+// 		console.log('listening on port TEST');
+// 	})
+// })
+// .catch(console.error);
 
 app.listen(3000, function () {
 	console.log('listening on port 3000') ;
