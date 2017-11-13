@@ -9,7 +9,8 @@ var env = nunjucks.configure('views', {noCache: true});
 var models = require('./models/index.js')          //connects to models-index.js
 var routes = require('./routes'); //by default ot will go to index.js
 
-
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 
 app.set('view engine', 'html'); //(name, value)
@@ -17,9 +18,6 @@ app.engine('html', nunjucks.render);
 
 
 app.use(express.static(__dirname + '/public'))
-<<<<<<< HEAD
-
-=======
 app.use(function (req, res, next) {
 	console.log('req.method & path: ', req.method, req.path);
 	next();
@@ -28,7 +26,6 @@ app.use('/', routes); //actually using methods in routes
 // app.get('/', function (req, res, next) {
 // 	res.
 // })
->>>>>>> 0a10c363b5e7613f0b6d5bb8d504440a098bb08c
 
 // models.db.sync({})
 // .then(function () {
